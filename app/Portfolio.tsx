@@ -26,30 +26,30 @@ const previewRects = [
   [{ left: 776, top: 649.48, size: 337.44 }, { left: 1148.71, top: 618, width: 305.2, height: 323.91 }, { left: 963.73, top: 651.34, width: 322.25, height: 298.4 }],
 ];
 const categoryPreviewGroups = [
-  ["/works/图片组/01-实习项目/实习-01.png", "/works/图片组/01-实习项目/实习-02.png", "/works/图片组/01-实习项目/实习-03.png"],
-  ["/works/图片组/02-品牌宣传/品牌-01.png", "/works/图片组/02-品牌宣传/品牌-02.png", "/works/图片组/02-品牌宣传/品牌-03.png"],
-  ["/works/图片组/03-插图/插画-01.png", "/works/图片组/03-插图/插画-02.png", "/works/图片组/03-插图/插画-03.png"],
-  ["/works/图片组/04-UI:UX设计/UX-01.png", "/works/图片组/04-UI:UX设计/UX-02.png", "/works/图片组/04-UI:UX设计/UX-03.png"],
-  ["/works/图片组/05-图标:动效设计/图标-01.png", "/works/图片组/05-图标:动效设计/图标-02.png", "/works/图片组/05-图标:动效设计/图标-03.png"],
-  ["/works/图片组/06-3D技术/建模-01.png", "/works/图片组/06-3D技术/建模-02.png", "/works/图片组/06-3D技术/建模-03.png"],
+  ["/works/图片组/01-实习项目/实习-01.webp", "/works/图片组/01-实习项目/实习-02.webp", "/works/图片组/01-实习项目/实习-03.webp"],
+  ["/works/图片组/02-品牌宣传/品牌-01.webp", "/works/图片组/02-品牌宣传/品牌-02.webp", "/works/图片组/02-品牌宣传/品牌-03.webp"],
+  ["/works/图片组/03-插图/插画-01.webp", "/works/图片组/03-插图/插画-02.webp", "/works/图片组/03-插图/插画-03.webp"],
+  ["/works/图片组/04-UI:UX设计/UX-01.webp", "/works/图片组/04-UI:UX设计/UX-02.webp", "/works/图片组/04-UI:UX设计/UX-03.webp"],
+  ["/works/图片组/05-图标:动效设计/图标-01.webp", "/works/图片组/05-图标:动效设计/图标-02.webp", "/works/图片组/05-图标:动效设计/图标-03.webp"],
+  ["/works/图片组/06-3D技术/建模-01.webp", "/works/图片组/06-3D技术/建模-02.webp", "/works/图片组/06-3D技术/建模-03.webp"],
 ];
 const signTexturePaths = [
-  "/works/指路牌贴图/实习项目.png",
-  "/works/指路牌贴图/品牌宣传.png",
-  "/works/指路牌贴图/插图.png",
-  "/works/指路牌贴图/UX设计.png",
-  "/works/指路牌贴图/动效设计.png",
-  "/works/指路牌贴图/3D技术.png",
+  "/works/指路牌贴图/实习项目.webp",
+  "/works/指路牌贴图/品牌宣传.webp",
+  "/works/指路牌贴图/插图.webp",
+  "/works/指路牌贴图/UX设计.webp",
+  "/works/指路牌贴图/动效设计.webp",
+  "/works/指路牌贴图/3D技术.webp",
 ];
 const workProjects: WorkProject[] = [
-  { title: "宝马南京实习项目 - 反向工程", year: "2025", tags: "UI DESIGN / INTERNSHIP / REVERSE ENGINEERING", categoryIndex: 0, images: [23, 24, 25, 26, 27, 28, 29].map((id) => `/works/03-bmw-reverse-engineering/${id}.png`), thumbnail: "/works/缩略图/bmw.png", featuredImages: ["/works/featured work/bmw-reverse-engineering.png"], featuredTitle: "BMW反向工程｜AI开发者PC端产品", featuredDescription: "面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。"], detailTools: "Figma、Photoshop、Illustrator" },
-  { title: "品牌宣传", year: "2026", tags: "BRANDING / PROMOTION", categoryIndex: 1, images: ["/works/05-brand-promotion/05-brand-promotion.png"], detailIntro: [] },
-  { title: "插画作品", year: "2026", tags: "ILLUSTRATION / VISUAL", categoryIndex: 2, images: [31, 32].map((id) => `/works/04-illustration/${id}.png`), featuredTitle: "插画设计｜扁平化视觉风格", detailIntro: ["以扁平矢量插画为主要表现形式，通过几何造型、渐变色彩和简洁线条，呈现协作、沟通、创作与数字生活等主题。整体风格轻快现代，注重画面构成、色彩层次与人物动作的视觉表达。", "使用Figma完成构图、矢量绘制与配色调整，并通过ChatGPT辅助主题构思、关键词提炼和创意方案迭代。"], detailTools: "Figma、ChatGPT" },
-  { title: "Bluebird travel", year: "2026", tags: "APP / UIUX / TRAVEL", categoryIndex: 3, images: [13, 14, 15, 16, 17, 18, 19, 20, 21].map((id) => `/works/02-bluebird-travel/${id}.png`), thumbnail: "/works/缩略图/bluebird.png", featuredImages: ["/works/featured work/bluebird-travel.png"], featuredTitle: "青鸟旅行｜AI旅行规划APP", featuredDescription: "面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。", featuredTools: "Figma、Photoshop、Illustrator、AIGC工具", detailIntro: ["面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。"], detailTools: "Figma、Photoshop、Illustrator、AIGC工具" },
-  { title: "Good Cases", year: "2026", tags: "GOOD CASES / INTERFACE / MOTION", categoryIndex: 3, images: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((id) => `/works/01-good-cases/${id}.png`), thumbnail: "/works/缩略图/goodcases.png", featuredImages: ["/works/featured work/good-cases.png"], featuredTitle: "好箱子｜社区智能纸箱回收系统", featuredDescription: "针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。"], detailTools: "Figma、Photoshop、Illustrator" },
-  { title: "艺学", year: "2024", tags: "APP / UIUX / EDUCATION", categoryIndex: 3, images: [19, 20, 21, 22].map((id) => `/works/ui-yixue/${id}.png`), thumbnail: "/works/缩略图/yixue.png", detailIntro: ["受疫情影响，学校线下教学受到限制，师生需要依赖线上平台完成课程教学与日常事务。但现有平台功能复杂，且难以与学校办公系统衔接，增加了师生的操作成本。", "本项目面向南京艺术学院在校教师与学生，通过问卷、访谈、竞品分析和用户需求梳理，研究师生在线上授课、课程管理及校园事务处理中的使用痛点，为后续构建集教学与校园办公于一体的专属平台提供设计依据。"], detailTools: "Figma、Photoshop、Illustrator" },
+  { title: "宝马南京实习项目 - 反向工程", year: "2025", tags: "UI DESIGN / INTERNSHIP / REVERSE ENGINEERING", categoryIndex: 0, images: [23, 24, 25, 26, 27, 28, 29].map((id) => `/works/03-bmw-reverse-engineering/${id}.webp`), thumbnail: "/works/缩略图/bmw.webp", featuredImages: ["/works/featured work/bmw-reverse-engineering.webp"], featuredTitle: "BMW反向工程｜AI开发者PC端产品", featuredDescription: "面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。"], detailTools: "Figma、Photoshop、Illustrator" },
+  { title: "品牌宣传", year: "2026", tags: "BRANDING / PROMOTION", categoryIndex: 1, images: ["/works/05-brand-promotion/05-brand-promotion.webp"], detailIntro: [] },
+  { title: "插画作品", year: "2026", tags: "ILLUSTRATION / VISUAL", categoryIndex: 2, images: [31, 32].map((id) => `/works/04-illustration/${id}.webp`), featuredTitle: "插画设计｜扁平化视觉风格", detailIntro: ["以扁平矢量插画为主要表现形式，通过几何造型、渐变色彩和简洁线条，呈现协作、沟通、创作与数字生活等主题。整体风格轻快现代，注重画面构成、色彩层次与人物动作的视觉表达。", "使用Figma完成构图、矢量绘制与配色调整，并通过ChatGPT辅助主题构思、关键词提炼和创意方案迭代。"], detailTools: "Figma、ChatGPT" },
+  { title: "Bluebird travel", year: "2026", tags: "APP / UIUX / TRAVEL", categoryIndex: 3, images: [13, 14, 15, 16, 17, 18, 19, 20, 21].map((id) => `/works/02-bluebird-travel/${id}.webp`), thumbnail: "/works/缩略图/bluebird.webp", featuredImages: ["/works/featured work/bluebird-travel.webp"], featuredTitle: "青鸟旅行｜AI旅行规划APP", featuredDescription: "面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。", featuredTools: "Figma、Photoshop、Illustrator、AIGC工具", detailIntro: ["面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。"], detailTools: "Figma、Photoshop、Illustrator、AIGC工具" },
+  { title: "Good Cases", year: "2026", tags: "GOOD CASES / INTERFACE / MOTION", categoryIndex: 3, images: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((id) => `/works/01-good-cases/${id}.webp`), thumbnail: "/works/缩略图/goodcases.webp", featuredImages: ["/works/featured work/good-cases.webp"], featuredTitle: "好箱子｜社区智能纸箱回收系统", featuredDescription: "针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。"], detailTools: "Figma、Photoshop、Illustrator" },
+  { title: "艺学", year: "2024", tags: "APP / UIUX / EDUCATION", categoryIndex: 3, images: [19, 20, 21, 22].map((id) => `/works/ui-yixue/${id}.webp`), thumbnail: "/works/缩略图/yixue.webp", detailIntro: ["受疫情影响，学校线下教学受到限制，师生需要依赖线上平台完成课程教学与日常事务。但现有平台功能复杂，且难以与学校办公系统衔接，增加了师生的操作成本。", "本项目面向南京艺术学院在校教师与学生，通过问卷、访谈、竞品分析和用户需求梳理，研究师生在线上授课、课程管理及校园事务处理中的使用痛点，为后续构建集教学与校园办公于一体的专属平台提供设计依据。"], detailTools: "Figma、Photoshop、Illustrator" },
   { title: "图标 / 动效设计", year: "2026", tags: "ICON DESIGN / MOTION / FILM STRIP", categoryIndex: 4, images: categoryPreviewGroups[4], detailVariant: "motion-strip" },
-  { title: "3D 建模作品", year: "2026", tags: "3D MODELING / VISUAL", categoryIndex: 5, images: ["/works/06-3d-modeling/06-3d-modeling.png"], detailIntro: [] },
+  { title: "3D 建模作品", year: "2026", tags: "3D MODELING / VISUAL", categoryIndex: 5, images: ["/works/06-3d-modeling/06-3d-modeling.webp"], detailIntro: [] },
 ];
 const featuredProjects = [
   workProjects.find((item) => item.title === "Good Cases"),
@@ -381,28 +381,28 @@ function Signpost3D({ onSelect }: { onSelect: (index: number | null) => void }) 
     const pole = new THREE.Mesh(addGeometry(new THREE.CylinderGeometry(0.105, 0.105, 9.8, 48)), poleMaterial);
     rig.add(pole);
     const stickerSources = [
-      "/works/贴图/图层 2.png",
-      "/works/贴图/图层 3.png",
-      "/works/贴图/图层 4.png",
-      "/works/贴图/图层 5.png",
-      "/works/贴图/图层 6.png",
-      "/works/贴图/图层 7.png",
-      "/works/贴图/图层 8.png",
-      "/works/贴图/图层 9.png",
-      "/works/贴图/图层 10.png",
-      "/works/贴图/图层 11.png",
-      "/works/贴图/图层 13.png",
-      "/works/贴图/图层 14.png",
-      "/works/贴图/图层 15.png",
-      "/works/贴图/图层 16.png",
-      "/works/贴图/图层 17.png",
-      "/works/贴图/图层 18.png",
-      "/works/贴图/图层 19.png",
-      "/works/贴图/图层 20.png",
-      "/works/贴图/图层 21.png",
-      "/works/贴图/图层 22.png",
-      "/works/贴图/图层 23.png",
-      "/works/贴图/图层 24.png",
+      "/works/贴图/图层 2.webp",
+      "/works/贴图/图层 3.webp",
+      "/works/贴图/图层 4.webp",
+      "/works/贴图/图层 5.webp",
+      "/works/贴图/图层 6.webp",
+      "/works/贴图/图层 7.webp",
+      "/works/贴图/图层 8.webp",
+      "/works/贴图/图层 9.webp",
+      "/works/贴图/图层 10.webp",
+      "/works/贴图/图层 11.webp",
+      "/works/贴图/图层 13.webp",
+      "/works/贴图/图层 14.webp",
+      "/works/贴图/图层 15.webp",
+      "/works/贴图/图层 16.webp",
+      "/works/贴图/图层 17.webp",
+      "/works/贴图/图层 18.webp",
+      "/works/贴图/图层 19.webp",
+      "/works/贴图/图层 20.webp",
+      "/works/贴图/图层 21.webp",
+      "/works/贴图/图层 22.webp",
+      "/works/贴图/图层 23.webp",
+      "/works/贴图/图层 24.webp",
     ];
     const stickerPlacements = [
       { y: 3.5, angle: -0.2, width: 0.24, tilt: -0.08 }, { y: 3.05, angle: 0.7, width: 0.2, tilt: 0.16 },
@@ -695,7 +695,7 @@ function Placeholder({ className = "", style }: { className?: string; style?: CS
 
 function WorkImage({ src, alt, className = "", style }: { src?: string; alt: string; className?: string; style?: CSSProperties }) {
   if (!src) return <Placeholder className={className} style={style} />;
-  return <img className={`work-image ${className}`} src={assetPath(src)} alt={alt} style={style} loading="lazy" />;
+  return <img className={`work-image ${className}`} src={assetPath(src)} alt={alt} style={style} loading="lazy" decoding="async" />;
 }
 
 function lottieValue(value: any, fallback: any) {
@@ -811,7 +811,7 @@ function MotionFilmStrip({ images }: { images: string[] }) {
   }, [cards.length]);
   return <section className="motion-film-demo" aria-label="图标动效卡片轮播">
     <div className="motion-stage-label"><span>图标/动效设计</span><span>2026</span></div>
-    <img className="motion-phone-mockup" src={assetPath("/works/motion/phone-mockup.png")} alt="手机样机" />
+    <img className="motion-phone-mockup" src={assetPath("/works/motion/phone-mockup.webp")} alt="手机样机" loading="lazy" decoding="async" />
     <div className="motion-strip">
       <div className="motion-track">
         {cards.map((item, index) => {
@@ -1013,8 +1013,8 @@ function WorksView({ initialCategory = null, initialProjectTitle = null }: { ini
       <div className={`detail-gallery ${isMotionDetail ? "motion-gallery" : ""}`}>
         {isMotionDetail ? <>
           {current.images.slice(1, 2).map((src, index) => <WorkImage key={src} src={src} alt={`${current.title} 图标 ${index + 2}`} />)}
-          <WorkImage src="/works/图片组/05-图标:动效设计/图标-01.png" alt={`${current.title} 静态展示 1`} />
-          <WorkImage src="/works/图片组/05-图标:动效设计/图标-04.png" alt={`${current.title} 静态展示 2`} />
+          <WorkImage src="/works/图片组/05-图标:动效设计/图标-01.webp" alt={`${current.title} 静态展示 1`} />
+          <WorkImage src="/works/图片组/05-图标:动效设计/图标-04.webp" alt={`${current.title} 静态展示 2`} />
           <div className="motion-gallery-lottie" aria-label={`${current.title} 动效 2`}><LottieJsonIcon src="/works/motion/motion08.json" /></div>
           <div className="motion-gallery-lottie" aria-label={`${current.title} 动效 3`}><LottieJsonIcon src="/works/motion/motion02.json" /></div>
         </> : galleryImages.map((src, index) => <WorkImage key={src ?? `placeholder-${index}`} src={src} alt={`${current.title} 详情图 ${index + 2}`} />)}
@@ -1084,7 +1084,7 @@ function AboutView() {
         </div>
       </section>
       <button className="about-panel skills-panel" onClick={() => setSkillsCollapsed((value) => !value)}><div className="panel-title">技能</div><h2>技能</h2><ol><li>App / Web界面设计 / 图标设计</li><li>用户流程 / 功能架构 / 原型设计</li><li>界面动效 / IP动画</li><li>视觉生成 / 3D</li></ol></button>
-      <button className="about-panel profile-panel" onClick={() => setProfileCollapsed((value) => !value)}><div className="panel-title">自我介绍</div><h2>王皓月 <span>HAOYUE WANG</span></h2><div className="profile-content"><WorkImage src="/works/me.png" alt="王皓月照片" /><dl><dt>出生</dt><dd>2001/10</dd><dt>电话</dt><dd>18851906125</dd><dt>所在地</dt><dd>江苏南京</dd><dt>微信名</dt><dd>whyue1009</dd><dt>邮箱</dt><dd>2970221145@qq.com</dd></dl></div></button>
+      <button className="about-panel profile-panel" onClick={() => setProfileCollapsed((value) => !value)}><div className="panel-title">自我介绍</div><h2>王皓月 <span>HAOYUE WANG</span></h2><div className="profile-content"><WorkImage src="/works/me.webp" alt="王皓月照片" /><dl><dt>出生</dt><dd>2001/10</dd><dt>电话</dt><dd>18851906125</dd><dt>所在地</dt><dd>江苏南京</dd><dt>微信名</dt><dd>whyue1009</dd><dt>邮箱</dt><dd>2970221145@qq.com</dd></dl></div></button>
     </div>
   </main>;
 }
