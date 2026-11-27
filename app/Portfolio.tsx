@@ -42,13 +42,12 @@ const signTexturePaths = [
   "/works/指路牌贴图/3D技术.webp",
 ];
 const workProjects: WorkProject[] = [
-  { title: "Edu Portal", year: "2026", tags: "UI DESIGN / INTERNSHIP / EDUCATION / WEB", categoryIndex: 0, images: [1, 2].map((id) => `/works/新增作品-Edual Portal/4-${id}.webp`), thumbnail: "/works/新增作品-Edual Portal/封面.webp", detailIntro: [] },
-  { title: "宝马南京实习项目 - 反向工程", year: "2025", tags: "UI DESIGN / INTERNSHIP / REVERSE ENGINEERING", categoryIndex: 0, images: [23, 24, 25, 26, 27, 28, 29].map((id) => `/works/03-bmw-reverse-engineering/${id}.webp`), thumbnail: "/works/缩略图/bmw.webp", featuredImages: ["/works/featured work/bmw-reverse-engineering.webp"], featuredTitle: "BMW反向工程｜AI开发者PC端产品", featuredDescription: "面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。"], detailTools: "Figma、Photoshop、Illustrator" },
+  { title: "Edu Portal", year: "2026", tags: "UI DESIGN / INTERNSHIP / EDUCATION / WEB", categoryIndex: 3, images: [1, 2].map((id) => `/works/新增作品-Edual Portal/4-${id}.webp`), thumbnail: "/works/新增作品-Edual Portal/封面.webp", detailIntro: [] },
+  { title: "宝马南京实习项目 - 反向工程", year: "2025", tags: "UI DESIGN / INTERNSHIP / REVERSE ENGINEERING", categoryIndex: 3, images: [23, 24, 25, 26, 27, 28, 29].map((id) => `/works/03-bmw-reverse-engineering/${id}.webp`), thumbnail: "/works/缩略图/bmw.webp", featuredImages: ["/works/featured work/bmw-reverse-engineering.webp"], featuredTitle: "BMW反向工程｜AI开发者PC端产品", featuredDescription: "面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["面向开发人员，对AI开发者工具进行产品反向分析与体验设计，重新梳理产品的信息架构、功能层级和核心使用流程，重点优化首页的信息组织与交互呈现，降低用户理解复杂代码项目和技术信息的成本。"], detailTools: "Figma、Photoshop、Illustrator" },
   { title: "品牌宣传", year: "2026", tags: "BRANDING / PROMOTION", categoryIndex: 1, images: ["/works/05-brand-promotion/05-brand-promotion.webp"], detailIntro: [] },
   { title: "插画作品", year: "2026", tags: "ILLUSTRATION / VISUAL", categoryIndex: 2, images: [31, 32].map((id) => `/works/04-illustration/${id}.webp`), featuredTitle: "插画设计｜扁平化视觉风格", detailIntro: ["以扁平矢量插画为主要表现形式，通过几何造型、渐变色彩和简洁线条，呈现协作、沟通、创作与数字生活等主题。整体风格轻快现代，注重画面构成、色彩层次与人物动作的视觉表达。", "使用Figma完成构图、矢量绘制与配色调整，并通过ChatGPT辅助主题构思、关键词提炼和创意方案迭代。"], detailTools: "Figma、ChatGPT" },
   { title: "Bluebird travel", year: "2026", tags: "APP / UIUX / TRAVEL", categoryIndex: 3, images: [13, 14, 15, 16, 17, 18, 19, 20, 21].map((id) => `/works/02-bluebird-travel/${id}.webp`), thumbnail: "/works/缩略图/bluebird.webp", featuredImages: ["/works/featured work/bluebird-travel.webp"], featuredTitle: "青鸟旅行｜AI旅行规划APP", featuredDescription: "面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。", featuredTools: "Figma、Photoshop、Illustrator、AIGC工具", detailIntro: ["面向年轻旅行用户，针对攻略信息分散、行程规划复杂和个性化不足等问题，设计AI攻略生成、路线推荐、住宿与交通比价以及旅行咨询等功能，帮助用户更高效地完成行前规划与旅行决策。"], detailTools: "Figma、Photoshop、Illustrator、AIGC工具" },
   { title: "Good Cases", year: "2026", tags: "GOOD CASES / INTERFACE / MOTION", categoryIndex: 3, images: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((id) => `/works/01-good-cases/${id}.webp`), thumbnail: "/works/缩略图/goodcases.webp", featuredImages: ["/works/featured work/good-cases.webp"], featuredTitle: "好箱子｜社区智能纸箱回收系统", featuredDescription: "针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。", featuredTools: "Figma、Photoshop、Illustrator", detailIntro: ["针对社区纸箱堆放杂乱、回收设备状态不透明以及居民参与动力不足等问题，设计智能回收装置与移动端应用。通过回收点查询、纸箱流程追踪、积分兑换和徽章激励等功能，构建线上线下结合的社区回收服务闭环。"], detailTools: "Figma、Photoshop、Illustrator" },
-  { title: "艺学", year: "2024", tags: "APP / UIUX / EDUCATION", categoryIndex: 3, images: [19, 20, 21, 22].map((id) => `/works/ui-yixue/${id}.webp`), thumbnail: "/works/缩略图/yixue.webp", detailIntro: ["受疫情影响，学校线下教学受到限制，师生需要依赖线上平台完成课程教学与日常事务。但现有平台功能复杂，且难以与学校办公系统衔接，增加了师生的操作成本。", "本项目面向南京艺术学院在校教师与学生，通过问卷、访谈、竞品分析和用户需求梳理，研究师生在线上授课、课程管理及校园事务处理中的使用痛点，为后续构建集教学与校园办公于一体的专属平台提供设计依据。"], detailTools: "Figma、Photoshop、Illustrator" },
   { title: "图标 / 动效设计", year: "2026", tags: "ICON DESIGN / MOTION / FILM STRIP", categoryIndex: 4, images: categoryPreviewGroups[4], detailVariant: "motion-strip" as const },
   { title: "3D 建模作品", year: "2026", tags: "3D MODELING / VISUAL", categoryIndex: 5, images: ["/works/06-3d-modeling/06-3d-modeling.webp"], detailIntro: [] },
 ].filter((project) => !["艺学", "品牌宣传"].includes(project.title)).map((project): WorkProject => {
@@ -64,11 +63,22 @@ const workProjects: WorkProject[] = [
   if (project.title === "Edu Portal") return { ...project, thumbnail: "/works/新增作品-Edual Portal/edu-portal-transparent-cover.webp" };
   return project as WorkProject;
 });
-const galleryCategoryOrder = [0, 3, 4, 2, 1, 5];
+const galleryCategoryOrder = [3, 4, 2, 1, 5];
 const galleryProjects = [...workProjects].sort((a, b) => galleryCategoryOrder.indexOf(a.categoryIndex) - galleryCategoryOrder.indexOf(b.categoryIndex));
+const projectCover = (project: WorkProject) => project.title === "3D 建模作品" ? "/works/06-3d-modeling/bookshop-render.webp" : project.thumbnail ?? project.featuredImages?.[0] ?? project.images[0];
+const projectCoverBackground = (project: WorkProject) => ({
+  "Edu Portal": "#dce8ff",
+  "宝马南京实习项目 - 反向工程": "#dfe3ea",
+  "Bluebird travel": "#75c2f6",
+  "Good Cases": "#c9f04a",
+  "图标 / 动效设计": "#f1f1f1",
+  "3D 建模作品": "#161616",
+}[project.title] ?? "transparent");
+const introCovers = galleryProjects.map(projectCover);
 const marqueeProjects = workProjects.map((project) => ({
   title: project.title,
-  image: project.thumbnail ?? project.featuredImages?.[0] ?? project.images[0],
+  image: projectCover(project),
+  background: projectCoverBackground(project),
 }));
 const directDetailCategories = new Set([1, 2, 4, 5]);
 const categoryProject = (index: number) => workProjects.find((item) => item.categoryIndex === index) ?? workProjects[0];
@@ -84,6 +94,88 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 function assetPath(path: string) {
   if (!basePath || /^(https?:)?\/\//.test(path) || path.startsWith("data:")) return path;
   return `${basePath}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+function InkTrail() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !window.matchMedia('(pointer: fine)').matches || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const context = canvas.getContext('2d');
+    if (!context) return;
+    let frame = 0;
+    let previous: { x: number; y: number; time: number } | null = null;
+    let speed = 0;
+    const marks: { x: number; y: number; radius: number; time: number; seed: number; speed: number }[] = [];
+    const resize = () => { canvas.width = canvas.clientWidth; canvas.height = canvas.clientHeight; };
+    const draw = (now: number) => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      while (marks.length && now - marks[0].time > 420) marks.shift();
+      for (const mark of marks) {
+        const age = (now - mark.time) / 420;
+        context.globalAlpha = Math.max(0, Math.min(1, (1 - age) * 3));
+        context.fillStyle = '#fff';
+        context.beginPath();
+        const radius = mark.radius * (1 - age * (.78 + mark.speed * .18));
+        for (let i = 0; i <= 32; i++) {
+          const angle = i / 32 * Math.PI * 2;
+          const edge = 1 + .075 * Math.sin(angle * 5 + mark.seed) + .035 * Math.sin(angle * 9 - mark.seed * 1.7);
+          const x = mark.x + Math.cos(angle) * radius * edge;
+          const y = mark.y + Math.sin(angle) * radius * edge;
+          if (i === 0) context.moveTo(x, y); else context.lineTo(x, y);
+        }
+        context.closePath();
+        context.fill();
+      }
+      if (!marks.length) previous = null;
+      context.globalAlpha = 1;
+      frame = marks.length ? requestAnimationFrame(draw) : 0;
+    };
+    const move = (event: PointerEvent) => {
+      const rect = canvas.getBoundingClientRect();
+      if (rect.top > innerHeight || rect.bottom < 0 || event.pointerType === 'touch') return;
+      const now = performance.now();
+      const point = { x: event.clientX - rect.left, y: event.clientY - rect.top, time: now };
+      const distance = previous ? Math.hypot(point.x - previous.x, point.y - previous.y) : 0;
+      const instantSpeed = previous ? Math.min(1, distance / Math.max(now - previous.time, 1) / 2) : 0;
+      speed = previous ? speed * .5 + instantSpeed * .5 : 0;
+      const count = Math.min(80, Math.max(1, Math.ceil(distance / 8)));
+      for (let i = 1; i <= count; i++) {
+        const t = i / count;
+        const markTime = (previous?.time ?? now) + (now - (previous?.time ?? now)) * t;
+        marks.push({ x: (previous?.x ?? point.x) + (point.x - (previous?.x ?? point.x)) * t, y: (previous?.y ?? point.y) + (point.y - (previous?.y ?? point.y)) * t, radius: 55 + Math.random() * 8, time: markTime, seed: markTime * .003, speed });
+      }
+      const maxLength = 90 + speed * 300;
+      while (marks.length && Math.hypot(marks[0].x - point.x, marks[0].y - point.y) > maxLength) marks.shift();
+      previous = point;
+      if (!frame) frame = requestAnimationFrame(draw);
+    };
+    const leave = () => { previous = null; speed = 0; };
+    resize();
+    window.addEventListener('resize', resize);
+    window.addEventListener('pointermove', move, { passive: true });
+    window.addEventListener('pointerout', leave);
+    return () => { window.removeEventListener('resize', resize); window.removeEventListener('pointermove', move); window.removeEventListener('pointerout', leave); cancelAnimationFrame(frame); };
+  }, []);
+  return <canvas className="ink-trail" ref={canvasRef} aria-hidden="true" />;
+}
+
+function OpeningSequence() {
+  const [phase, setPhase] = useState<'hidden' | 'cycle' | 'stack' | 'spread' | 'fade'>('hidden');
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    try { if (sessionStorage.getItem('portfolio-opening-seen')) return; sessionStorage.setItem('portfolio-opening-seen', '1'); } catch { /* Storage can be unavailable in private browsing. */ }
+    setPhase('cycle');
+    const interval = window.setInterval(() => setActive((value) => Math.min(value + 1, introCovers.length - 1)), 260);
+    const cycleDuration = introCovers.length * 260;
+    const timers = [window.setTimeout(() => { clearInterval(interval); setPhase('stack'); }, cycleDuration), window.setTimeout(() => setPhase('spread'), cycleDuration + 1400), window.setTimeout(() => setPhase('fade'), cycleDuration + 2450), window.setTimeout(() => setPhase('hidden'), cycleDuration + 3250)];
+    return () => { clearInterval(interval); timers.forEach(clearTimeout); };
+  }, []);
+  if (phase === 'hidden') return null;
+  return <div className={`opening-sequence opening-phase-${phase}`} aria-hidden="true">
+    <div className="opening-stack">{galleryProjects.map((project, index) => <div className="opening-cover" key={`${project.title}-${index}`} style={{ '--cover-index': index, '--cover-offset': index - (introCovers.length - 1) / 2, '--cover-bg': projectCoverBackground(project), opacity: phase === 'cycle' && index !== active ? 0 : 1 } as CSSProperties}><img src={assetPath(introCovers[index])} alt="" /></div>)}</div>
+  </div>;
 }
 
 function makeArtwork(index: number, label: string) {
@@ -113,7 +205,7 @@ function makeArtwork(index: number, label: string) {
   return texture;
 }
 
-function makeContainedTexture(image: CanvasImageSource, width: number, height: number, offsetYRatio = 0, textureScale = 1, offsetXRatio = 0) {
+function makeContainedTexture(image: CanvasImageSource, width: number, height: number, offsetYRatio = 0, textureScale = 1, offsetXRatio = 0, blurPx = 0) {
   const aspect = width / height;
   const canvas = document.createElement("canvas");
   canvas.width = aspect >= 1 ? 1200 : Math.max(1, Math.round(1200 * aspect));
@@ -127,7 +219,9 @@ function makeContainedTexture(image: CanvasImageSource, width: number, height: n
   const drawHeight = Number(sourceHeight) * scale;
   const x = (canvas.width - drawWidth) / 2 + canvas.width * offsetXRatio;
   const y = (canvas.height - drawHeight) / 2 + canvas.height * offsetYRatio;
+  context.filter = blurPx > 0 ? `blur(${blurPx}px)` : "none";
   context.drawImage(image, x, y, drawWidth, drawHeight);
+  context.filter = "none";
   const texture = new THREE.CanvasTexture(canvas);
   texture.colorSpace = THREE.SRGBColorSpace;
   texture.flipY = false;
@@ -329,13 +423,13 @@ function makeCurvedStickerGeometry(width: number, height: number, radius: number
   return geometry;
 }
 
-function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive }: { onSelect: (index: number | null) => void; focusIndex: number | null; focusPosition: number; focusBlend: number; modelScale: number; scrollSpin: number; pointerActive: boolean }) {
+function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive, frontIndex = null }: { onSelect: (index: number | null) => void; focusIndex: number | null; focusPosition: number; focusBlend: number; modelScale: number; scrollSpin: number; pointerActive: boolean; frontIndex?: number | null }) {
   const mountRef = useRef<HTMLDivElement>(null);
-  const scrollStateRef = useRef({ focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive });
+  const scrollStateRef = useRef({ focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive, frontIndex });
 
   useEffect(() => {
-    scrollStateRef.current = { focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive };
-  }, [focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive]);
+    scrollStateRef.current = { focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive, frontIndex };
+  }, [focusIndex, focusPosition, focusBlend, modelScale, scrollSpin, pointerActive, frontIndex]);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -349,6 +443,11 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setClearColor(0xffffff, 0);
     mount.appendChild(renderer.domElement);
+    const focusRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    focusRenderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    focusRenderer.outputColorSpace = THREE.SRGBColorSpace;
+    focusRenderer.setClearColor(0xffffff, 0);
+    mount.appendChild(focusRenderer.domElement);
 
     const ambient = new THREE.HemisphereLight(0xffffff, 0x5f6268, 3.4);
     scene.add(ambient);
@@ -549,10 +648,12 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
       textures.push(texture);
       const body = new THREE.Mesh(addGeometry(makeBoardGeometry(spec.kind, spec.width, spec.height, 0.14)), edgeMaterial);
       const frontMaterial = addMaterial(new THREE.MeshStandardMaterial({ map: texture, roughness: 0.55, metalness: 0.02, transparent: true, side: THREE.DoubleSide }));
+      frontMaterial.userData.signFace = true;
       textureLoader.load(encodeURI(assetPath(signTexturePaths[index])), (loadedTexture) => {
         const size = faceSize(spec.kind, spec.width, spec.height, spec.faceWidth, spec.faceHeight);
         const fittedTexture = makeContainedTexture(loadedTexture.image, size.width, size.height, spec.kind === "triangle" ? -0.02 : 0, spec.textureScale ?? 1, spec.textureOffsetX ?? 0);
         textures.push(loadedTexture, fittedTexture);
+        frontMaterial.userData.sharpMap = fittedTexture;
         frontMaterial.map = fittedTexture;
         frontMaterial.needsUpdate = true;
       });
@@ -663,6 +764,7 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
       const width = mount.clientWidth;
       const height = mount.clientHeight;
       renderer.setSize(width, height, false);
+      focusRenderer.setSize(width, height, false);
       camera.aspect = width / Math.max(height, 1);
       camera.updateProjectionMatrix();
     };
@@ -707,16 +809,57 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
         : 0;
       const blend = THREE.MathUtils.clamp(scrollState.focusBlend, 0, 1);
       targetRotation = -0.38 + (focusRotation + 0.38) * blend + scrollState.scrollSpin + (scrollState.pointerActive ? pointerRotation : 0);
+      if (scrollState.frontIndex !== null && signGroups[scrollState.frontIndex]) targetRotation = -signGroups[scrollState.frontIndex].rotation.y;
+      targetRotation = rig.rotation.y + THREE.MathUtils.euclideanModulo(targetRotation - rig.rotation.y + Math.PI, Math.PI * 2) - Math.PI;
       targetPitch = scrollState.pointerActive ? pointerPitch : 0;
       targetShiftX = 0;
-      targetShiftY = -focusY * scrollState.modelScale * blend;
+      const selectedIndex = scrollState.frontIndex ?? scrollState.focusIndex;
+      const selectedSign = selectedIndex === null ? null : signGroups[selectedIndex];
+      targetShiftY = selectedSign
+        ? -selectedSign.position.y * scrollState.modelScale
+        : -focusY * scrollState.modelScale * blend;
       rig.rotation.y += (targetRotation - rig.rotation.y) * 0.085;
       rig.rotation.x += (targetPitch - rig.rotation.x) * 0.085;
       const scale = stage.scale.x + (targetScale - stage.scale.x) * 0.075;
       stage.scale.setScalar(scale);
       stage.position.x += (targetShiftX - stage.position.x) * 0.075;
       stage.position.y += (targetShiftY - stage.position.y) * 0.075;
-      renderer.render(scene, camera);
+      signGroups.forEach((sign, index) => {
+        const selected = selectedIndex === index;
+        const targetOpacity = selectedIndex === null ? 1 : selected ? 1 : 0.12;
+        const targetBoardScale = selected ? 1.2 : 0.86;
+        sign.scale.x += (targetBoardScale - sign.scale.x) * 0.08;
+        sign.scale.y += (targetBoardScale - sign.scale.y) * 0.08;
+        sign.scale.z += (targetBoardScale - sign.scale.z) * 0.08;
+        sign.traverse((child) => {
+          const material = (child as THREE.Mesh).material as THREE.Material | THREE.Material[] | undefined;
+          if (!material) return;
+          const materials = Array.isArray(material) ? material : [material];
+          materials.forEach((entry) => {
+            if (!entry.userData.signFace) return;
+            const desiredMap = entry.userData.sharpMap;
+            if (desiredMap && entry.map !== desiredMap) {
+              entry.map = desiredMap;
+              entry.needsUpdate = true;
+            }
+            entry.opacity += (targetOpacity - entry.opacity) * 0.08;
+          });
+        });
+      });
+      if (selectedIndex !== null && signGroups[selectedIndex]) {
+        renderer.domElement.style.filter = "";
+        signGroups[selectedIndex].visible = false;
+        renderer.render(scene, camera);
+        signGroups[selectedIndex].visible = true;
+        const childVisibility = rig.children.map((child) => child.visible);
+        rig.children.forEach((child) => { child.visible = child === signGroups[selectedIndex]; });
+        focusRenderer.render(scene, camera);
+        rig.children.forEach((child, index) => { child.visible = childVisibility[index]; });
+      } else {
+        renderer.domElement.style.filter = "";
+        renderer.render(scene, camera);
+        focusRenderer.clear();
+      }
     };
     stage.scale.setScalar(targetScale);
     animate();
@@ -731,6 +874,7 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
       geometries.forEach((geometry) => geometry.dispose());
       materials.forEach((material) => material.dispose());
       renderer.dispose();
+      focusRenderer.dispose();
       if (renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement);
     };
   }, [onSelect]);
@@ -909,7 +1053,7 @@ function MotionFilmStrip({ images }: { images: string[] }) {
   </section>;
 }
 
-function LensImage({ src, labels, disableDeformation = false, animation, stickers, model }: { src: string; labels: string[]; disableDeformation?: boolean; animation?: string; stickers?: string[]; model?: boolean }) {
+function LensImage({ src, labels, background = "transparent", disableDeformation = false, animation, stickers, model }: { src: string; labels: string[]; background?: string; disableDeformation?: boolean; animation?: string; stickers?: string[]; model?: boolean }) {
   const mountRef = useRef<HTMLSpanElement>(null);
   const pointerRef = useRef(new THREE.Vector2(.5, .5));
   const [active, setActive] = useState(false);
@@ -962,7 +1106,7 @@ function LensImage({ src, labels, disableDeformation = false, animation, sticker
     pointerRef.current.set(x, 1 - y);
     setActive(!disableDeformation && x > .12 && x < .88 && y > .12 && y < .88);
   };
-  return <span className="journey-work-image" ref={mountRef} onPointerEnter={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerMove={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerLeave={() => setActive(false)}>{model ? <BookshopCover fallback={src} /> : stickers ? <span className="sticker-stack">{stickers.map((sticker, index) => <img src={assetPath(sticker)} alt="" key={sticker} className={`sticker sticker-${index + 1}`} loading="lazy" />)}</span> : animation ? <LottieJsonIcon src={animation} /> : <img src={assetPath(src)} alt="" loading="lazy" decoding="async" />}<span className="gallery-image-shade" aria-hidden="true" /><span className="gallery-image-tags">{labels.map((label, index) => <span className="gallery-image-tag" key={`${label}-${index}`} style={{ "--tag-index": index } as CSSProperties}>{label}</span>)}</span></span>;
+  return <span className="journey-work-image" ref={mountRef} style={{ "--cover-bg": background } as CSSProperties} onPointerEnter={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerMove={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerLeave={() => setActive(false)}>{model ? <BookshopCover fallback={src} /> : stickers ? <span className="sticker-stack">{stickers.map((sticker, index) => <img src={assetPath(sticker)} alt="" key={sticker} className={`sticker sticker-${index + 1}`} loading="lazy" />)}</span> : animation ? <LottieJsonIcon src={animation} /> : <img src={assetPath(src)} alt="" loading="lazy" decoding="async" />}<span className="gallery-image-shade" aria-hidden="true" /><span className="gallery-image-tags">{labels.map((label, index) => <span className="gallery-image-tag" key={`${label}-${index}`} style={{ "--tag-index": index } as CSSProperties}>{label}</span>)}</span></span>;
 }
 
 function BookshopCover({ fallback }: { fallback: string }) {
@@ -1128,6 +1272,7 @@ function HomeView({ openProject }: { openProject: (projectTitle: string) => void
         "--sign-clip-y": `${signClipY}%`,
       } as CSSProperties}>
         <div className="journey-ellipse" aria-hidden="true" />
+        {journey.travel < .15 && <InkTrail />}
         <div className="journey-intro-copy" style={{ opacity: journey.category === null ? 1 : 0 }}>
           <span>HAOYUE WANG · 2026</span>
           <h1 className="journey-title-art"><img src={assetPath("/works/hero-title.svg")} alt="WANG HAOYUE PORTFOLIO" /></h1>
@@ -1146,7 +1291,7 @@ function HomeView({ openProject }: { openProject: (projectTitle: string) => void
                 const entryY = -18 + (startY + 18) * entryProgress;
                 const imageY = journey.travel >= 2.85 ? 89 - (89 - startY) * .45 * Math.sin(Math.PI * exitProgress) + 125 * exitProgress * exitProgress : entryY + (89 - entryY) * arcTravel;
                 const imageScale = 1 + .3 * (1 - Math.max(0, Math.min(1, (imageY + 18) / 107)));
-                return <button type="button" className="works-marquee-tile" key={project.title} aria-label={`查看${project.title}`} onClick={() => openProject(project.title)} style={{ "--arc-x": `${(index + .5) * 100 / marqueeProjects.length}%`, "--arc-y": `${imageY}%`, "--arc-scale": imageScale } as CSSProperties}>
+                return <button type="button" className="works-marquee-tile" key={project.title} aria-label={`查看${project.title}`} onClick={() => openProject(project.title)} style={{ "--arc-x": `${(index + .5) * 100 / marqueeProjects.length}%`, "--arc-y": `${imageY}%`, "--arc-scale": imageScale, "--cover-bg": project.background } as CSSProperties}>
                 <img src={assetPath(project.image)} alt="" loading="eager" decoding="async" />
               </button>; })}
           </div> : <div className="works-ticker"><div className="works-ticker-track">{[0, 1].map((copy) => <div className="works-ticker-group" key={copy}>{marqueeProjects.map((project) => <button type="button" className="works-ticker-tile" key={project.title} aria-label={`查看${project.title}`} tabIndex={copy === 0 ? 0 : -1} onClick={() => openProject(project.title)}><img src={assetPath(project.image)} alt="" decoding="async" /></button>)}</div>)}</div></div>}
@@ -1163,7 +1308,12 @@ function WorkGallery({ openProject }: { openProject: (title: string) => void }) 
   const [scrollSpin, setScrollSpin] = useState(0);
   const [visible, setVisible] = useState(false);
   const [backgroundOpacity, setBackgroundOpacity] = useState(0);
-  const ignoreSelect = useCallback(() => {}, []);
+  const [activeCategory, setActiveCategory] = useState<number | null>(null);
+  const selectCategory = useCallback((index: number | null) => {
+    if (index === null || !galleryProjects.some((project) => project.categoryIndex === index)) return;
+    setActiveCategory(index);
+    document.getElementById(`gallery-category-${index}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
   useEffect(() => {
     let frame = 0;
     const update = () => {
@@ -1173,8 +1323,18 @@ function WorkGallery({ openProject }: { openProject: (title: string) => void }) 
       const rect = section.getBoundingClientRect();
       const height = Math.max(window.innerHeight, 1);
       setVisible(rect.top < height && rect.bottom > 0);
-      setBackgroundOpacity(Math.max(0, Math.min(1, -rect.top / (height * .4))));
+      const galleryEntered = rect.top <= height * .92;
+      setBackgroundOpacity(galleryEntered ? Math.max(.9, Math.min(1, -rect.top / (height * .4))) : 0);
       setScrollSpin(Math.max(0, Math.min(1, -rect.top / Math.max(rect.height - height, 1))) * Math.PI * 4);
+      const categoryAnchors = galleryCategoryOrder
+        .map((category) => document.getElementById(`gallery-category-${category}`))
+        .filter((anchor): anchor is HTMLElement => Boolean(anchor));
+      const targetY = height * 0.45;
+      const currentAnchor = categoryAnchors.reduce<HTMLElement | null>((current, anchor) => {
+        if (anchor.getBoundingClientRect().top <= targetY) return anchor;
+        return current;
+      }, categoryAnchors[0] ?? null);
+      if (currentAnchor) setActiveCategory(Number(currentAnchor.id.replace("gallery-category-", "")));
       section.querySelectorAll<HTMLElement>(".journey-work-image").forEach((image) => {
         const bounds = image.getBoundingClientRect();
         const progress = Math.max(0, Math.min(1, (height - bounds.top) / (height + bounds.height)));
@@ -1188,12 +1348,15 @@ function WorkGallery({ openProject }: { openProject: (title: string) => void }) 
     return () => { if (frame) cancelAnimationFrame(frame); window.removeEventListener("scroll", requestUpdate); window.removeEventListener("resize", requestUpdate); };
   }, []);
   return <section className="work-gallery" ref={sectionRef} aria-label="作品集">
-    <div className="gallery-background" aria-hidden="true" style={{ opacity: backgroundOpacity }}>
-      {visible && <Signpost3D onSelect={ignoreSelect} focusIndex={null} focusPosition={0} focusBlend={0} modelScale={1.65} scrollSpin={scrollSpin} pointerActive={false} />}
+    <div className="gallery-background" style={{ opacity: backgroundOpacity }}>
+      {visible && <Signpost3D onSelect={selectCategory} focusIndex={null} focusPosition={0} focusBlend={0} modelScale={1.65} scrollSpin={scrollSpin} pointerActive={false} frontIndex={activeCategory} />}
+      <nav className="gallery-sign-navigation" aria-label="作品分类">
+        {galleryCategoryOrder.filter((index) => galleryProjects.some((project) => project.categoryIndex === index)).map((index) => <button key={index} type="button" onClick={() => selectCategory(index)}>{categories[index]}</button>)}
+      </nav>
     </div>
     <div className="gallery-grid">
       {galleryProjects.map((project, index) => {
-        const image = project.title === "3D 建模作品" ? "/works/06-3d-modeling/bookshop-render.webp" : project.thumbnail ?? project.featuredImages?.[0] ?? project.images[0];
+        const image = projectCover(project);
         const platforms = project.tags.split(" / ").filter((tag) => /^(APP|WEB|PC)$/.test(tag));
         if (!platforms.length && /PC/i.test(project.featuredTitle ?? "")) platforms.push("PC");
         const firstInCategory = index === 0 || galleryProjects[index - 1].categoryIndex !== project.categoryIndex;
@@ -1203,7 +1366,9 @@ function WorkGallery({ openProject }: { openProject: (title: string) => void }) 
         const isWebCover = ["宝马南京实习项目 - 反向工程", "Edu Portal"].includes(project.title);
         const isCutout = isMotionCover || isModelCover || !!stickerIds || isWebCover || ["Good Cases", "Bluebird travel"].includes(project.title);
         const isPortraitCutout = ["Good Cases", "Bluebird travel"].includes(project.title);
-        return <article className={`gallery-item${isCutout ? " gallery-item-cutout" : ""}${isPortraitCutout ? " gallery-item-cutout-portrait" : ""}${isWebCover ? " gallery-item-web" : ""}${isMotionCover ? " gallery-item-motion" : ""}${stickerIds ? " gallery-item-stickers" : ""}${project.title === "插画作品" ? " gallery-item-illustration" : ""}${isModelCover ? " gallery-item-model" : ""}`} key={project.title} id={firstInCategory ? `gallery-category-${project.categoryIndex}` : undefined}>
+        const isCurrentCategory = activeCategory === project.categoryIndex;
+        const hasActiveCategory = activeCategory !== null;
+        return <article className={`gallery-item${isCurrentCategory ? " is-active-category" : ""}${hasActiveCategory && !isCurrentCategory ? " is-muted-category" : ""}${isCutout ? " gallery-item-cutout" : ""}${isPortraitCutout ? " gallery-item-cutout-portrait" : ""}${isWebCover ? " gallery-item-web" : ""}${isMotionCover ? " gallery-item-motion" : ""}${stickerIds ? " gallery-item-stickers" : ""}${project.title === "插画作品" ? " gallery-item-illustration" : ""}${isModelCover ? " gallery-item-model" : ""}`} key={project.title} id={firstInCategory ? `gallery-category-${project.categoryIndex}` : undefined}>
           <button className="journey-work-card" onClick={() => openProject(project.title)} onPointerMove={(event) => {
             if (event.pointerType === "touch") return;
             const bounds = event.currentTarget.getBoundingClientRect();
@@ -1212,7 +1377,7 @@ function WorkGallery({ openProject }: { openProject: (title: string) => void }) 
             event.currentTarget.style.setProperty("--tilt-y", `${((event.clientX - bounds.left) / bounds.width - .5) * 16}deg`);
             event.currentTarget.style.setProperty("--tilt-x", `${(.5 - (event.clientY - bounds.top) / bounds.height) * 12}deg`);
           }} onPointerLeave={(event) => { event.currentTarget.style.setProperty("--tilt-y", "0deg"); event.currentTarget.style.setProperty("--tilt-x", "0deg"); }}>
-            <LensImage src={image} labels={[project.year, categories[project.categoryIndex], ...platforms]} disableDeformation={isCutout} animation={isMotionCover ? "/works/motion/motion08-cover.json" : undefined} stickers={stickerIds?.map((id) => `/works/cover-stickers/sticker-${id}${id === 3 || id === 4 ? "-transparent" : ""}.webp`)} model={isModelCover} />
+            <LensImage src={image} labels={[project.year, categories[project.categoryIndex], ...platforms]} background={projectCoverBackground(project)} disableDeformation={isCutout} animation={isMotionCover ? "/works/motion/motion08-cover.json" : undefined} stickers={stickerIds?.map((id) => `/works/cover-stickers/sticker-${id}${id === 3 || id === 4 ? "-transparent" : ""}.webp`)} model={isModelCover} />
             <span className="journey-work-copy"><strong>{project.featuredTitle ?? project.title}</strong><span>{project.featuredDescription ?? project.detailIntro?.[0] ?? project.tags}</span></span>
             <span className="gallery-enter" aria-hidden="true">↗</span>
             <span className="journey-work-cursor" aria-hidden="true"><span>进入</span><span>↘</span></span>
@@ -1435,7 +1600,7 @@ export default function Portfolio() {
     setView("home");
     setPageKey((key) => key + 1);
   };
-  return <div className="portfolio-shell"><Header view={view} onChange={changeView} />
+  return <div className="portfolio-shell"><OpeningSequence /><Header view={view} onChange={changeView} />
     <div key={`${view}-${pageKey}`}>{view === "home" && <HomeView openProject={(projectTitle) => changeView("works", null, projectTitle)} />}{view === "works" && <WorksView initialCategory={initialWorkCategory} initialProjectTitle={initialWorkProjectTitle} onClose={closeDetail} />}{view === "about" && <AboutView />}</div>
   </div>;
 }
