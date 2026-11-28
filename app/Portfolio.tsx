@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type ImgHTMLAttributes } from "react";
 import * as THREE from "three";
 
 type View = "home" | "works" | "about";
@@ -174,7 +174,7 @@ function OpeningSequence() {
   }, []);
   if (phase === 'hidden') return null;
   return <div className={`opening-sequence opening-phase-${phase}`} aria-hidden="true">
-    <div className="opening-stack">{galleryProjects.map((project, index) => <div className="opening-cover" key={`${project.title}-${index}`} style={{ '--cover-index': index, '--cover-offset': index - (introCovers.length - 1) / 2, '--cover-bg': projectCoverBackground(project), opacity: phase === 'cycle' && index !== active ? 0 : 1 } as CSSProperties}><img src={assetPath(introCovers[index])} alt="" /></div>)}</div>
+    <div className="opening-stack">{galleryProjects.map((project, index) => <div className="opening-cover" key={`${project.title}-${index}`} style={{ '--cover-index': index, '--cover-offset': index - (introCovers.length - 1) / 2, '--cover-bg': projectCoverBackground(project), opacity: phase === 'cycle' && index !== active ? 0 : 1 } as CSSProperties}><ResponsiveImage src={assetPath(introCovers[index])} alt="" /></div>)}</div>
   </div>;
 }
 
@@ -439,12 +439,12 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
     camera.position.set(0, 0.08, 19.5);
     camera.lookAt(0, 0, 0);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(devicePixelRatio, window.innerWidth <= 767 ? 1 : 1.5));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setClearColor(0xffffff, 0);
     mount.appendChild(renderer.domElement);
     const focusRenderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    focusRenderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    focusRenderer.setPixelRatio(Math.min(devicePixelRatio, window.innerWidth <= 767 ? 1 : 1.5));
     focusRenderer.outputColorSpace = THREE.SRGBColorSpace;
     focusRenderer.setClearColor(0xffffff, 0);
     mount.appendChild(focusRenderer.domElement);
@@ -774,8 +774,12 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
     let frame = 0;
     targetScale = scrollStateRef.current.modelScale;
     stage.scale.setScalar(targetScale);
+    let inViewport = false;
+    const visibilityObserver = new IntersectionObserver(([entry]) => { inViewport = entry.isIntersecting; });
+    visibilityObserver.observe(mount);
     const animate = () => {
       frame = requestAnimationFrame(animate);
+      if (!inViewport || document.hidden) return;
       const scrollState = scrollStateRef.current;
       const atmosphere = scrollState.pointerActive;
       ambient.intensity += ((atmosphere ? .22 : 3.4) - ambient.intensity) * .08;
@@ -875,6 +879,8 @@ function Signpost3D({ onSelect, focusIndex, focusPosition, focusBlend, modelScal
       materials.forEach((material) => material.dispose());
       renderer.dispose();
       focusRenderer.dispose();
+      visibilityObserver.disconnect();
+      focusRenderer.domElement.remove();
       if (renderer.domElement.parentNode === mount) mount.removeChild(renderer.domElement);
     };
   }, [onSelect]);
@@ -916,9 +922,16 @@ function Placeholder({ className = "", style }: { className?: string; style?: CS
   return <div className={`placeholder ${className}`} style={style} aria-label="作品图片占位" />;
 }
 
+function ResponsiveImage(props: ImgHTMLAttributes<HTMLImageElement>) {
+  const src = props.src;
+  if (typeof src !== 'string' || !src.endsWith('.webp') || !src.startsWith(`${basePath}/works/`)) return <img {...props} />;
+  const mobile = `${basePath}/mobile${src.slice(basePath.length)}`;
+  return <picture><source media="(max-width: 767px)" srcSet={mobile} /><img {...props} decoding="async" /></picture>;
+}
+
 function WorkImage({ src, alt, className = "", style }: { src?: string; alt: string; className?: string; style?: CSSProperties }) {
   if (!src) return <Placeholder className={className} style={style} />;
-  return <img className={`work-image ${className}`} src={assetPath(src)} alt={alt} style={style} loading="lazy" decoding="async" />;
+  return <ResponsiveImage className={`work-image ${className}`} src={assetPath(src)} alt={alt} style={style} loading="lazy" decoding="async" />;
 }
 
 function lottieValue(value: any, fallback: any) {
@@ -974,26 +987,40 @@ function LottieJsonIcon({ src, scale = 1 }: { src: string; scale?: number }) {
   const containerRef = useRef<HTMLSpanElement>(null);
   useEffect(() => {
     let cancelled = false;
-    let animation: { destroy: () => void } | null = null;
-    import("lottie-web")
+    let started = false;
+    let visible = false;
+    let animation: { destroy: () => void; play: () => void; pause: () => void } | null = null;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const syncPlayback = () => { if (visible && !document.hidden && !reduced) animation?.play(); else animation?.pause(); };
+    const start = () => { started = true; import("lottie-web")
       .then((module) => {
         if (cancelled || !containerRef.current) return;
         animation = module.default.loadAnimation({
           container: containerRef.current,
           renderer: "svg",
           loop: true,
-          autoplay: true,
+          autoplay: false,
           path: assetPath(src),
           rendererSettings: {
             preserveAspectRatio: "xMidYMid meet",
           },
         });
       })
+      .then(() => syncPlayback())
       .catch(() => {
         animation = null;
-      });
+      }); };
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      if (visible && !started) start();
+      syncPlayback();
+    });
+    if (containerRef.current) observer.observe(containerRef.current);
+    document.addEventListener('visibilitychange', syncPlayback);
     return () => {
       cancelled = true;
+      observer.disconnect();
+      document.removeEventListener('visibilitychange', syncPlayback);
       animation?.destroy();
     };
   }, [src]);
@@ -1034,7 +1061,7 @@ function MotionFilmStrip({ images }: { images: string[] }) {
   }, [cards.length]);
   return <section className="motion-film-demo" aria-label="图标动效卡片轮播">
     <div className="motion-stage-label"><span>图标/动效设计</span><span>2026</span></div>
-    <img className="motion-phone-mockup" src={assetPath("/works/motion/phone-mockup.webp")} alt="手机样机" loading="lazy" decoding="async" />
+    <ResponsiveImage className="motion-phone-mockup" src={assetPath("/works/motion/phone-mockup.webp")} alt="手机样机" loading="lazy" decoding="async" />
     <div className="motion-strip">
       <div className="motion-track">
         {cards.map((item, index) => {
@@ -1106,7 +1133,7 @@ function LensImage({ src, labels, background = "transparent", disableDeformation
     pointerRef.current.set(x, 1 - y);
     setActive(!disableDeformation && x > .12 && x < .88 && y > .12 && y < .88);
   };
-  return <span className="journey-work-image" ref={mountRef} style={{ "--cover-bg": background } as CSSProperties} onPointerEnter={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerMove={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerLeave={() => setActive(false)}>{model ? <BookshopCover fallback={src} /> : stickers ? <span className="sticker-stack">{stickers.map((sticker, index) => <img src={assetPath(sticker)} alt="" key={sticker} className={`sticker sticker-${index + 1}`} loading="lazy" />)}</span> : animation ? <LottieJsonIcon src={animation} /> : <img src={assetPath(src)} alt="" loading="lazy" decoding="async" />}<span className="gallery-image-shade" aria-hidden="true" /><span className="gallery-image-tags">{labels.map((label, index) => <span className="gallery-image-tag" key={`${label}-${index}`} style={{ "--tag-index": index } as CSSProperties}>{label}</span>)}</span></span>;
+  return <span className="journey-work-image" ref={mountRef} style={{ "--cover-bg": background } as CSSProperties} onPointerEnter={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerMove={(event) => { if (event.pointerType !== "touch") updatePointer(event); }} onPointerLeave={() => setActive(false)}>{model ? <BookshopCover fallback={src} /> : stickers ? <span className="sticker-stack">{stickers.map((sticker, index) => <ResponsiveImage src={assetPath(sticker)} alt="" key={sticker} className={`sticker sticker-${index + 1}`} loading="lazy" />)}</span> : animation ? <LottieJsonIcon src={animation} /> : <ResponsiveImage src={assetPath(src)} alt="" loading="lazy" decoding="async" />}<span className="gallery-image-shade" aria-hidden="true" /><span className="gallery-image-tags">{labels.map((label, index) => <span className="gallery-image-tag" key={`${label}-${index}`} style={{ "--tag-index": index } as CSSProperties}>{label}</span>)}</span></span>;
 }
 
 function BookshopCover({ fallback }: { fallback: string }) {
@@ -1116,6 +1143,7 @@ function BookshopCover({ fallback }: { fallback: string }) {
   useEffect(() => {
     const mount = mountRef.current;
     if (!mount) return;
+    if (window.matchMedia('(max-width: 767px), (pointer: coarse), (prefers-reduced-motion: reduce)').matches) return;
     const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) { setNear(true); observer.disconnect(); } }, { rootMargin: "300px" });
     observer.observe(mount);
     return () => observer.disconnect();
@@ -1128,7 +1156,7 @@ function BookshopCover({ fallback }: { fallback: string }) {
     let model: THREE.Group | null = null;
     let renderer: THREE.WebGLRenderer;
     try { renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true }); } catch { return; }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = .4;
@@ -1178,11 +1206,11 @@ function BookshopCover({ fallback }: { fallback: string }) {
     const parent = mount.closest(".journey-work-card");
     parent?.addEventListener("pointermove", move as EventListener);
     parent?.addEventListener("pointerleave", reset);
-    const render = () => { frame = requestAnimationFrame(render); if (model) { model.rotation.y += (Math.PI / 2 + targetY - model.rotation.y) * .08; model.rotation.x += (targetX - model.rotation.x) * .08; } renderer.render(scene, camera); };
+    const render = () => { frame = requestAnimationFrame(render); const rect = mount.getBoundingClientRect(); if (document.hidden || rect.bottom < 0 || rect.top > window.innerHeight) return; if (model) { model.rotation.y += (Math.PI / 2 + targetY - model.rotation.y) * .08; model.rotation.x += (targetX - model.rotation.x) * .08; } renderer.render(scene, camera); };
     render();
     return () => { disposed = true; cancelAnimationFrame(frame); observer.disconnect(); parent?.removeEventListener("pointermove", move as EventListener); parent?.removeEventListener("pointerleave", reset); if (model) model.traverse((child) => { if (child instanceof THREE.Mesh) { child.geometry.dispose(); const mats = Array.isArray(child.material) ? child.material : [child.material]; mats.forEach((mat) => { Object.values(mat).forEach((value) => { if (value instanceof THREE.Texture) value.dispose(); }); mat.dispose(); }); } }); renderer.dispose(); renderer.domElement.remove(); };
   }, [near]);
-  return <span className="bookshop-cover" ref={mountRef}>{!loaded && <img src={assetPath(fallback)} alt="" loading="lazy" />}</span>;
+  return <span className="bookshop-cover" ref={mountRef}>{!loaded && <ResponsiveImage src={assetPath(fallback)} alt="" loading="lazy" />}</span>;
 }
 
 function HomeView({ openProject }: { openProject: (projectTitle: string) => void }) {
@@ -1275,7 +1303,7 @@ function HomeView({ openProject }: { openProject: (projectTitle: string) => void
         {journey.travel < .15 && <InkTrail />}
         <div className="journey-intro-copy" style={{ opacity: journey.category === null ? 1 : 0 }}>
           <span>HAOYUE WANG · 2026</span>
-          <h1 className="journey-title-art"><img src={assetPath("/works/hero-title.svg")} alt="WANG HAOYUE PORTFOLIO" /></h1>
+          <h1 className="journey-title-art"><ResponsiveImage src={assetPath("/works/hero-title.svg")} alt="WANG HAOYUE PORTFOLIO" /></h1>
           <p>INTERACTIVE DESIGNER<br />南京艺术学院 · 智能交互与产品体验</p>
         </div>
         <Signpost3D onSelect={onSelect} focusIndex={journey.category} focusPosition={journey.focusPosition} focusBlend={journey.focusBlend} modelScale={modelScale} scrollSpin={journey.introProgress * Math.PI * 2} pointerActive={journey.travel >= 0.83 && journey.travel < 3} />
@@ -1292,9 +1320,9 @@ function HomeView({ openProject }: { openProject: (projectTitle: string) => void
                 const imageY = journey.travel >= 2.85 ? 89 - (89 - startY) * .45 * Math.sin(Math.PI * exitProgress) + 125 * exitProgress * exitProgress : entryY + (89 - entryY) * arcTravel;
                 const imageScale = 1 + .3 * (1 - Math.max(0, Math.min(1, (imageY + 18) / 107)));
                 return <button type="button" className="works-marquee-tile" key={project.title} aria-label={`查看${project.title}`} onClick={() => openProject(project.title)} style={{ "--arc-x": `${(index + .5) * 100 / marqueeProjects.length}%`, "--arc-y": `${imageY}%`, "--arc-scale": imageScale, "--cover-bg": project.background } as CSSProperties}>
-                <img src={assetPath(project.image)} alt="" loading="eager" decoding="async" />
+                <ResponsiveImage src={assetPath(project.image)} alt="" loading="lazy" decoding="async" />
               </button>; })}
-          </div> : <div className="works-ticker"><div className="works-ticker-track">{[0, 1].map((copy) => <div className="works-ticker-group" key={copy}>{marqueeProjects.map((project) => <button type="button" className="works-ticker-tile" key={project.title} aria-label={`查看${project.title}`} tabIndex={copy === 0 ? 0 : -1} onClick={() => openProject(project.title)}><img src={assetPath(project.image)} alt="" decoding="async" /></button>)}</div>)}</div></div>}
+          </div> : <div className="works-ticker"><div className="works-ticker-track">{[0, 1].map((copy) => <div className="works-ticker-group" key={copy}>{marqueeProjects.map((project) => <button type="button" className="works-ticker-tile" key={project.title} aria-label={`查看${project.title}`} tabIndex={copy === 0 ? 0 : -1} onClick={() => openProject(project.title)}><ResponsiveImage src={assetPath(project.image)} alt="" decoding="async" /></button>)}</div>)}</div></div>}
         </div>}
       </div>
     </section>

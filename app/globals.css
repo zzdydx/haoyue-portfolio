@@ -149,8 +149,8 @@ button { color:inherit; font:inherit; }
 .gallery-item .journey-work-cursor span:last-child { width:32px; padding:0; font-size:18px; }
 @media (hover:hover) and (pointer:fine) { .gallery-item .journey-work-card:hover { cursor:none; } }
 .gallery-item .journey-work-image img,.gallery-item .journey-work-image canvas { transform:scale(1.4) translateY(var(--image-shift, 0%)); transition:transform .65s var(--motion-out),filter .35s ease; }
-.gallery-item-cutout .journey-work-image > img { object-fit:contain; transform:scale(.92); transition:transform .35s ease; }
-.gallery-item-cutout .journey-work-card:hover .journey-work-image > img,.gallery-item-cutout .journey-work-card:focus-visible .journey-work-image > img { transform:scale(1); }
+.gallery-item-cutout .journey-work-image > picture > img { object-fit:contain; transform:scale(.92); transition:transform .35s ease; }
+.gallery-item-cutout .journey-work-card:hover .journey-work-image > picture > img,.gallery-item-cutout .journey-work-card:focus-visible .journey-work-image > picture > img { transform:scale(1); }
 .gallery-item-model .journey-work-image { perspective:900px; }
 .gallery-item-model .journey-work-image > img,.gallery-item-model .journey-work-card:hover .journey-work-image > img { transform:rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)) scale(.94); transition:transform .18s ease-out; }
 .gallery-item-cutout .gallery-image-shade { display:none; }
@@ -516,3 +516,4 @@ button { color:inherit; font:inherit; }
   .journey-project-panel,.signpost-canvas,.journey-intro-copy,.journey-work-card,.gallery-item .journey-work-image img,.gallery-item .journey-work-image canvas,.gallery-item .journey-work-copy { animation-duration:.01ms; transition-duration:.01ms; }
   .detail-page::before { animation-duration:.01ms; }
 }
+picture { display: contents; }
